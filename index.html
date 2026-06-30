@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AGshop est une boutique en ligne à Ouakam, Dakar. Achetez vêtements, lingerie, pyjamas, shorts, robes et accessoires en FCFA avec commande rapide sur WhatsApp." />
-  <meta name="keywords" content="AGshop, boutique en ligne Sénégal, e-commerce Dakar, boutique Ouakam, vêtements FCFA, t-shirts, lingerie, pyjamas, shorts, robes, accessoires" />
+  <meta name="description" content="AGshop est une boutique en ligne à Ouakam, Dakar. Achetez caleçons, slips, robes, lingerie et ensembles femme en FCFA avec commande rapide sur WhatsApp." />
+  <meta name="keywords" content="AGshop, boutique en ligne Sénégal, e-commerce Dakar, boutique Ouakam, caleçon homme, slip homme, robe femme, lingerie sexy, lingerie femme, ensemble femme, prix FCFA" />
   <meta name="author" content="AGshop" />
   <meta property="og:title" content="AGshop | Boutique en ligne à Ouakam, Dakar" />
-  <meta property="og:description" content="Vêtements, lingerie, pyjamas, shorts, robes et accessoires en FCFA. Commande rapide sur WhatsApp au +221 77 461 06 44." />
+  <meta property="og:description" content="Caleçons, slips, robes, lingerie et ensembles femme en FCFA. Commande rapide sur WhatsApp au +221 77 461 06 44." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="logo-agshop.png" />
   <title>AGshop Ouakam | Boutique en ligne au Sénégal</title>
@@ -18,7 +18,7 @@
       "@context": "https://schema.org",
       "@type": "Store",
       "name": "AGshop",
-      "description": "Boutique en ligne de vêtements, lingerie, pyjamas, shorts, robes et accessoires à Ouakam, Dakar.",
+      "description": "Boutique en ligne de caleçons, slips, robes, lingerie et ensembles femme à Ouakam, Dakar.",
       "image": "logo-agshop.png",
       "telephone": "+221774610644",
       "priceRange": "FCFA",
@@ -787,6 +787,46 @@
       object-fit: cover;
     }
 
+    .gallery {
+      display: grid;
+      gap: 8px;
+    }
+
+    .gallery-main {
+      width: 100%;
+      min-height: 430px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: var(--soft);
+    }
+
+    .gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      padding: 0 10px 10px;
+    }
+
+    .thumb {
+      border: 2px solid transparent;
+      background: var(--white);
+      border-radius: 8px;
+      padding: 0;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+    }
+
+    .thumb.active {
+      border-color: var(--pink);
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-fit: cover;
+    }
+
     .modal-body {
       padding: 30px;
       display: flex;
@@ -865,6 +905,7 @@
       .products, .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .modal { grid-template-columns: 1fr; }
       .modal-media img { min-height: auto; aspect-ratio: 1 / 1; }
+      .gallery-main { min-height: auto; }
     }
 
     @media (max-width: 560px) {
@@ -925,7 +966,7 @@
     <section class="hero">
       <div>
         <h1>AGshop, votre <span>boutique en ligne</span> à Ouakam.</h1>
-        <p>Commandez des vêtements, lingerie, pyjamas, shorts, robes et accessoires en FCFA avec détails produits, choix des tailles et confirmation rapide sur WhatsApp.</p>
+        <p>Commandez caleçons, slips, robes, lingerie et ensembles femme en FCFA avec photos réelles, choix des tailles et confirmation rapide sur WhatsApp.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#products">Voir les articles</a>
           <button class="btn btn-outline" type="button" data-filter-button="Promotions">Promotions</button>
@@ -934,7 +975,7 @@
       <aside class="hero-panel">
         <img src="logo-agshop.png" alt="AGshop votre boutique en ligne" />
         <div class="hero-stats">
-          <div class="hero-stat"><strong>8+</strong><span>Articles</span></div>
+          <div class="hero-stat"><strong>6</strong><span>Produits</span></div>
           <div class="hero-stat"><strong>FCFA</strong><span>Prix locaux</span></div>
           <div class="hero-stat"><strong>Ouakam</strong><span>Cité Comico</span></div>
         </div>
@@ -958,7 +999,7 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">Notre boutique</p>
-          <h2>Vêtements et accessoires populaires</h2>
+          <h2>Nos produits disponibles</h2>
         </div>
         <button class="btn btn-outline" type="button" id="showAll">Tout voir</button>
       </div>
@@ -1061,93 +1102,71 @@
     const products = [
       {
         id: 1,
-        name: "T-shirt Homme Classique",
-        category: "T-shirts",
-        price: 7500,
+        name: "Caleçon Homme",
+        category: "Caleçons",
+        price: 1500,
         oldPrice: null,
         badge: "Nouveau",
-        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
-        sizes: ["S", "M", "L", "XL", "XXL"],
-        desc: "T-shirt 100% coton, coupe droite confortable, idéal pour un style quotidien propre et simple."
+        images: ["calecon.jpeg"],
+        sizes: ["M", "L", "XL", "XXL"],
+        desc: "Caleçon homme léger et confortable, idéal pour un usage quotidien. Sa coupe simple offre une bonne liberté de mouvement et un maintien agréable."
       },
       {
         id: 2,
-        name: "T-shirt Femme Oversize",
-        category: "T-shirts",
-        price: 6500,
+        name: "Slip Homme Rouge",
+        category: "Slips",
+        price: 1000,
         oldPrice: null,
         badge: "Nouveau",
-        image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        desc: "Coupe oversize moderne, tissu doux et respirant, parfait pour les tenues de tous les jours."
+        images: ["split_red.jpeg", "slip_red2.jpeg", "slip_red3.jpeg"],
+        sizes: ["M", "L", "XL", "XXL"],
+        desc: "Slip homme rouge avec tissu doux et coupe ajustée. Un basique pratique, facile à porter et pensé pour le confort toute la journée."
       },
       {
         id: 3,
-        name: "Nuisette Dentelle Femme",
-        category: "Lingerie",
-        price: 12500,
-        oldPrice: 16000,
-        badge: "Promo",
-        image: "https://images.unsplash.com/photo-1602810316498-ab67cf68c8e1?auto=format&fit=crop&w=900&q=80",
+        name: "Robe Femme",
+        category: "Robes",
+        price: 8000,
+        oldPrice: null,
+        badge: "Nouveau",
+        images: ["robe.jpeg", "robe2.jpeg"],
         sizes: ["S", "M", "L", "XL"],
-        desc: "Nuisette élégante avec détails en dentelle, bretelles fines et tissu agréable pour la nuit."
+        desc: "Robe femme élégante et facile à porter, parfaite pour les sorties, les moments décontractés ou les occasions simples. Coupe féminine et rendu soigné."
       },
       {
         id: 4,
-        name: "Boxer Homme Coton",
-        category: "Lingerie",
-        price: 4500,
+        name: "Lingerie Sexy Bleue",
+        category: "Lingerie sexy",
+        price: 6000,
         oldPrice: null,
-        badge: null,
-        image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=900&q=80",
-        sizes: ["M", "L", "XL", "XXL"],
-        desc: "Boxer respirant avec ceinture élastique confortable et maintien adapté au quotidien."
+        badge: "Promo",
+        images: ["lingerie_sexy_blue1.jpeg", "lingerie_sexy_blue2.jpeg", "lingerie_sexy_blue3.jpeg"],
+        sizes: ["S", "M", "L", "XL"],
+        desc: "Lingerie sexy bleue avec détails délicats et coupe séduisante. Un modèle raffiné pour se sentir belle, confiante et à l'aise."
       },
       {
         id: 5,
-        name: "Ensemble Pyjama Femme",
-        category: "Pyjamas",
-        price: 14500,
-        oldPrice: 18000,
+        name: "Lingerie Femme",
+        category: "Lingerie",
+        price: 5000,
+        oldPrice: null,
         badge: "Promo",
-        image: "https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?auto=format&fit=crop&w=900&q=80",
+        images: ["lingerie_gray.jpeg", "lingerie_gray2.jpeg", "lingerie_gray3.jpeg", "lingerie_gray4.jpeg", "lingerie_pink.jpeg", "lingerie_pink2.jpeg", "lingerie_pink3.jpeg"],
         sizes: ["S", "M", "L", "XL"],
-        desc: "Pyjama deux pieces doux et leger, pense pour des nuits confortables et un look soigne."
+        desc: "Lingerie femme disponible en plusieurs couleurs, avec tissu agréable et finition soignée. Un modèle confortable pour allier élégance et simplicité."
       },
       {
         id: 6,
-        name: "Short Bermuda Homme",
-        category: "Shorts",
-        price: 9500,
+        name: "Ensemble Femme",
+        category: "Ensembles",
+        price: 10000,
         oldPrice: null,
         badge: "Nouveau",
-        image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=900&q=80",
-        sizes: ["M", "L", "XL", "XXL"],
-        desc: "Bermuda casual avec poches pratiques, coupe droite et finition confortable."
-      },
-      {
-        id: 7,
-        name: "Robe Légère Femme",
-        category: "Robes",
-        price: 16000,
-        oldPrice: null,
-        badge: null,
-        image: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=900&q=80",
-        sizes: ["XS", "S", "M", "L"],
-        desc: "Robe fluide et élégante, idéale pour les sorties, événements simples et journées chaudes."
-      },
-      {
-        id: 8,
-        name: "Casquette AGshop",
-        category: "Accessoires",
-        price: 5000,
-        oldPrice: 6500,
-        badge: "Promo",
-        image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=900&q=80",
-        sizes: ["Unique"],
-        desc: "Casquette réglable pour compléter facilement une tenue streetwear ou casual."
+        images: ["ensemble_blue.jpeg", "ensemble_blue2.jpeg", "ensemble_rose.jpeg", "ensemble_rose2.jpeg"],
+        sizes: ["S", "M", "L", "XL"],
+        desc: "Ensemble femme disponible en bleu et en rose, pratique pour composer une tenue harmonieuse. Tissu agréable, style moderne et rendu élégant."
       }
-    ];
+    ].map(product => ({ ...product, image: product.images[0] }));
 
     const state = {
       filter: "Tous",
@@ -1302,7 +1321,20 @@
       state.selectedProduct = product;
       state.selectedSize = product.sizes[0];
 
-      document.querySelector("#modalMedia").innerHTML = `<img src="${product.image}" alt="${product.name}" />`;
+      document.querySelector("#modalMedia").innerHTML = `
+        <div class="gallery">
+          <img class="gallery-main" id="galleryMain" src="${product.images[0]}" alt="${product.name}" />
+          ${product.images.length > 1 ? `
+            <div class="gallery-thumbs">
+              ${product.images.map((image, index) => `
+                <button class="thumb ${index === 0 ? "active" : ""}" type="button" data-gallery="${image}" aria-label="Voir la photo ${index + 1} de ${product.name}">
+                  <img src="${image}" alt="${product.name} ${index + 1}" />
+                </button>
+              `).join("")}
+            </div>
+          ` : ""}
+        </div>
+      `;
       document.querySelector("#modalCategory").textContent = product.category;
       document.querySelector("#modalName").textContent = product.name;
       document.querySelector("#modalPrice").innerHTML = `${formatPrice(product.price)} ${product.oldPrice ? `<span class="old">${formatPrice(product.oldPrice)}</span>` : ""}`;
@@ -1335,6 +1367,7 @@
       const qtyButton = event.target.closest("[data-qty]");
       const removeButton = event.target.closest("[data-remove]");
       const sizeButton = event.target.closest("[data-size]");
+      const galleryButton = event.target.closest("[data-gallery]");
 
       if (filterButton) setFilter(filterButton.dataset.filter);
       if (promoButton) setFilter(promoButton.dataset.filterButton);
@@ -1346,6 +1379,11 @@
         state.selectedSize = sizeButton.dataset.size;
         document.querySelectorAll(".size").forEach(button => button.classList.remove("active"));
         sizeButton.classList.add("active");
+      }
+      if (galleryButton) {
+        document.querySelector("#galleryMain").src = galleryButton.dataset.gallery;
+        document.querySelectorAll(".thumb").forEach(button => button.classList.remove("active"));
+        galleryButton.classList.add("active");
       }
     });
 
